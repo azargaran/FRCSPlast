@@ -1,33 +1,38 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    color: #333;
 }
 
 header {
-    background-color: #0073e6;
+    background: linear-gradient(to right, #0073e6, #00aaff);
     color: white;
     padding: 20px 0;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5em;
+    animation: fadeInDown 1s;
 }
 
 header p {
     margin: 5px 0;
+    animation: fadeInDown 1.5s;
 }
 
 section {
-    padding: 20px;
+    padding: 40px;
     margin: 20px auto;
     width: 80%;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s;
 }
 
 section h2 {
@@ -38,9 +43,17 @@ section h2 {
 
 .faculty-member {
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
     margin-bottom: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.faculty-member:hover {
+    transform: translateY(-5px);
 }
 
 .faculty-member img {
@@ -58,10 +71,12 @@ section h2 {
 
 .faculty-member h3 {
     margin: 0;
+    color: #0073e6;
 }
 
 .faculty-member p {
     margin: 5px 0 0 0;
+    line-height: 1.6;
 }
 
 .video {
@@ -81,13 +96,19 @@ section h2 {
     width: 30%;
     height: auto;
     object-fit: cover;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.photos img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
 }
 
 @media (max-width: 768px) {
@@ -98,7 +119,6 @@ footer {
     .faculty-member {
         flex-direction: column;
         text-align: center;
-        align-items: center;
     }
 
     .faculty-member img {
@@ -113,5 +133,27 @@ footer {
 
     .photos img {
         width: 80%;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
