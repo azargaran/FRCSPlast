@@ -63,12 +63,42 @@ section h2 {
     text-align: center;
 }
 
+.photos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.photos img {
+    border-radius: 8px;
+    margin: 10px;
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+}
+
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+}
+
+@media (max-width: 768px) {
+    section {
+        width: 90%;
+    }
+
+    .faculty-member {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .faculty-member img {
+        margin: 0 0 10px 0;
+    }
+
+    .photos img {
+        width: 80%;
+    }
 }
