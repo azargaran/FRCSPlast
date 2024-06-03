@@ -23,6 +23,30 @@
         </div>
     </section>
 
+    <section id="countdown">
+        <div class="container">
+            <h2>Countdown to the Course</h2>
+            <div id="countdown-timer">
+                <div class="time-section">
+                    <span id="days"></span>
+                    <span>Days</span>
+                </div>
+                <div class="time-section">
+                    <span id="hours"></span>
+                    <span>Hours</span>
+                </div>
+                <div class="time-section">
+                    <span id="minutes"></span>
+                    <span>Minutes</span>
+                </div>
+                <div class="time-section">
+                    <span id="seconds"></span>
+                    <span>Seconds</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="faculty">
         <div class="container">
             <h2>Faculty Profiles</h2>
@@ -98,5 +122,37 @@
             <p>© 2024 FRCS Course in Plastic Surgery. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("September 7, 2024 09:00:00").getTime();
+
+        // Update the count down every 1 second
+        var countdownfunction = setInterval(function() {
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the elements with id
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(countdownfunction);
+                document.getElementById("countdown-timer").innerHTML = "The event has started!";
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
