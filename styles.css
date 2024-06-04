@@ -74,16 +74,15 @@ section h2 {
 }
 
 .faculty-info {
-    flex: 1;
-    min-width: 200px;
+    text-align: left;
 }
 
-.faculty-member h3 {
+.faculty-info h3 {
     margin: 10px 0 0 0;
     color: #0073e6;
 }
 
-.faculty-member p {
+.faculty-info p {
     margin: 5px 0 0 0;
     line-height: 1.6;
 }
