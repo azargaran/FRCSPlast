@@ -113,6 +113,25 @@ section h2 {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+.flyer {
+    text-align: center;
+    margin-top: 20px;
+    animation: zoomIn 1s;
+}
+
+.flyer img {
+    width: 80%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.flyer img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
 #countdown-timer {
     display: flex;
     justify-content: center;
@@ -148,6 +167,10 @@ footer {
         width: 80%;
     }
 
+    .flyer img {
+        width: 100%;
+    }
+
     #countdown-timer {
         flex-direction: column;
     }
@@ -172,5 +195,16 @@ footer {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }
